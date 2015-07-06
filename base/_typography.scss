@@ -8,7 +8,66 @@
  *
  */
 
+$base-font-size: 16px !default;
+$base-line-height: 24px !default;
+
+// The font sizes for h1-h6.
+// default: http://modularscale.com/scale/?px1=16&px2=24&ra1=1.618&ra2=0
+$h1-font-size: 3.927 * $base-font-size !default;
+$h2-font-size: 2.618 * $base-font-size !default;
+$h3-font-size: 2.427 * $base-font-size !default;
+$h4-font-size: 1.618 * $base-font-size !default;
+$h5-font-size: 1.5 * $base-font-size !default;
+$h6-font-size: 1 * $base-font-size !default;
+
+$base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$heading-font-family: "Source Sans Pro", sans-serif !default;
+
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $base-font-family;
   line-height: 1.5;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+@mixin rocket-blockquote {
+  border-left: 0.25em solid #E9E9E9;
+  color: #666666;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0 1.5em 0 1em;
+  margin-left: 0
+}
+
+@mixin rocket-blockquote-2 {
+  background-color: black;
+  color: #FFFFFF;
+  float: right;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0 -1em 0 1em;
+  padding: 0.5em;
+  width: 15em;
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+blockquote {
+  @include rocket-blockquote;
 }
