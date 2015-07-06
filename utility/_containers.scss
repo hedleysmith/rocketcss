@@ -1,0 +1,44 @@
+/**
+ * Rocket Components.
+ * http://hedleysmith.github.io/rocketcomponents/
+ *
+ * 'Grid' utility component.
+ * A simple responsive grid and breakpoints.
+ *
+ * Dependencies:
+ * - rocket/utility/clearfix
+ * - /utility/grid
+ */
+
+// Configuration
+$container-normal: 1400px;
+$container-thin: 1050px;
+$container-thinner: 44em;
+
+// At which breakpoint should we switch from small to large gutters?
+$gutter-breakpoint: $break-large;
+
+@mixin container-fixed() {
+  @include clearfix;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 $grid-gutter-small;
+  @media (min-width: $gutter-breakpoint) {
+    padding: 0 $grid-gutter-large;
+  }
+}
+
+.l-container {
+  @include container-fixed;
+  max-width: $container-normal;
+}
+
+.l-container-thin {
+  @include container-fixed;
+  max-width: $container-thin;
+}
+
+.l-container-thinner {
+  @include container-fixed;
+  max-width: $container-thinner;
+}

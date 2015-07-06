@@ -1,0 +1,28 @@
+/**
+ * Rocket Components.
+ * http://hedleysmith.github.io/rocketcomponents/
+ *
+ * 'Lists' utility component.
+ *
+ * Dependencies: none
+ *
+ */
+
+// Strip all styling from list.
+@mixin list-bare() {
+  padding: 0;
+  margin: 0;
+  > li {
+    list-style-type: none;
+  }
+}
+
+// Apply to a UL to float horizontally.
+// @todo - Use a variable '$scope-list-item' instead of > li.
+@mixin list-horizontal() {
+  @include list-bare();
+  > li {
+    float: left;
+    position: relative;
+  }
+}

@@ -1,0 +1,14 @@
+/**
+ * Rocket Components.
+ * http://hedleysmith.github.io/rocketcomponents/
+ *
+ * 'Content styling' utility component.
+ *
+ * Dependencies: none
+ */
+
+@mixin content-styling() {
+  h2 {
+    color: $colour-primary;
+  }
+}

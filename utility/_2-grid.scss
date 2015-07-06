@@ -1,0 +1,48 @@
+/**
+ * Rocket Components.
+ * http://hedleysmith.github.io/rocketcomponents/
+ *
+ * 'Grid' utility component.
+ * A simple responsive grid and breakpoints.
+ *
+ * Dependencies: none
+ *
+ */
+
+// Breakpoints
+$break-tiny: 370px;
+$break-small: 490px;
+$break-medium: 720px;
+$break-large: 1020px;
+$break-xl: 1220px;
+$break-xxl: 1300px;
+
+// Gutters
+$grid-gutter-small: 1em;
+$grid-gutter-large: 3em;
+
+// Spacing
+$grid-stacked-bottom-space: 2em;
+$grid-floated-bottom-space: 1em;
+
+// Grid config
+$grid-float-at: $break-medium;
+
+// Grid
+@mixin grid-item-base() {
+  @include clearfix();
+  box-sizing: border-box;
+  min-height: 1px;
+  position: relative;
+  padding-bottom: $grid-stacked-bottom-space;
+  display: block;
+  width: 100%;
+  @media (min-width: $grid-float-at) {
+    padding: 0 ($grid-gutter-small / 2) $grid-floated-bottom-space ($grid-gutter-small / 2);
+    float: left;
+  }
+}
+
+.grid-item {
+  @include grid-item-base();
+}
