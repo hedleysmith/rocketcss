@@ -4,7 +4,8 @@
  *
  * 'Links' base configuration component.
  *
- * Dependencies: none
+ * Dependencies:
+ * - rocket/utility/animations
  *
  */
 
@@ -18,7 +19,6 @@ $link-color-hover: lighten($link-color, 20%) !default;
 
 // Transition parameters
 $link-transition-duration: 0.15s !default;
-$link-transition-timing-function: ease !default;
 
 
 @mixin base-link {
@@ -31,8 +31,8 @@ $link-transition-timing-function: ease !default;
 
   // Apply a transition on hover
   @if $apply-link-transition-on-hover {
-    transition: color $link-transition-duration
-    $link-transition-timing-function;
+    @include rocket-animation-default();
+    transition-property: color;
   }
 
   &:hover,

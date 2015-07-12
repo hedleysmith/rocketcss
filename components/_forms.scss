@@ -4,6 +4,83 @@
  *
  * 'Forms' UI component.
  *
- * Dependencies: none
- *
+ * Dependencies:
+ * - rocket/base/colours
+ * - rocket/utility/animations
  */
+
+// Configuration
+$form-border-style: 2px solid rgba(0,0,0,.12) !default;
+$form-input-text-size: 1em !default;
+$form-border-active-colour: $colour-primary !default;
+
+// Form items.
+.form-item {
+  margin-bottom: 1em;
+}
+
+// Form item descriptions.
+.form-item__description {
+  font-size: .85em;
+  color: #666;
+}
+
+// Textfields
+.form-textfield {
+  &__label {
+    font-size: .9em;
+    font-weight: bold;
+  }
+  &__input {
+    @include rocket-animation-default();
+    border: none;
+    border-bottom: $form-border-style;
+    display: inline-block;
+    font-size: $form-input-text-size;
+    margin: 0;
+    padding: .5em 0;
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    &:focus {
+      outline: none;
+      border-color: $form-border-active-colour;
+    }
+  }
+}
+
+// Extend the textfield classes on to the password field type.
+.form-password {
+  @extend .form-textfield;
+  @__label {
+    @extend .form-textfield__label;
+  }
+  &__input {
+    @extend .form-textfield__input;
+  }
+}
+
+// Select lists.
+// @todo
+
+// Toggles
+// E.g Radios & Checkboxes
+.form-toggle {
+  &--boxed {
+
+  }
+}
+
+// Field groups
+.form-group {
+  &--highlighted {
+
+  }
+  &--outlined {
+
+  }
+}
+
+.form-actions {
+  margin-bottom: 1em;
+}

@@ -1,0 +1,33 @@
+/**
+ * Rocket Components.
+ * http://hedleysmith.github.io/rocketcomponents/
+ *
+ * 'Breacrum' UI component.
+ *
+ * Dependencies:
+ * - rocket/utility/clearfix
+ * - rocket/utility/lists
+ *
+ */
+
+.breadcrumb {
+ @include clearfix();
+ &__title {
+   @extend .element-invisible;
+ }
+ &__list {
+   @include list-horizontal();
+ }
+ &__item {
+  margin-right: .5em;
+  &:after {
+    content: "\00BB";
+    margin-left: 0.5em;
+  }
+
+  &:last-child:after {
+    content: "";
+    margin-left: 0;
+  }
+ }
+}

@@ -10,18 +10,23 @@
  */
 
 /**
+ * Configuration options.
+ * For minor overrides, see _theme.scss.
+ */
+$button-border-radius: 3px !default;
+$button-text-color: rgba(0, 0, 0, 0.8) !default;
+
+/**
  * The button mixin.
  * Examples:
  * - @include button(primary, small);
  */
-@mixin button($style: plain, $size: normal, $background-color: #E6E6E6, $text-color: rgba(0, 0, 0, 0.8)) {
-  $border-radius: 3px !default;
-  $text-color: rgba(0, 0, 0, 0.8) !default;
 
+@mixin button($button-style: plain, $button-size: normal, $background-color: #E6E6E6, $text-color: rgba(0, 0, 0, 0.8)) {
   transition: all 0.25s ease;
-  border-radius: $border-radius;
+  border-radius: $button-border-radius;
   background-color: $background-color;
-  color: $text-color;
+  color: $button-text-color;
   border: 0 none transparent;
   padding: .75em 2em;
   text-decoration: none;
@@ -43,36 +48,35 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
   }
 
-  @if $style == "primary" {
+  @if $button-style == "primary" {
     background-color: $colour-primary;
     color: #FFF;
     &:visited {
       color: #FFF;
     }
   }
-  @if $style == "secondary" {
+  @if $button-style == "secondary" {
     background-color: $colour-secondary;
     color: #FFF;
     &:visited {
       color: #FFF;
     }
   }
-  @if $style == "positive" {
+  @if $button-style == "positive" {
     background-color: $colour-positive;
     color: #FFF;
   }
-  @if $style == "negative" {
+  @if $button-style == "negative" {
     background-color: $colour-negative;
   }
-  @if $size == "large" {
+  @if $button-size == "large" {
     font-size: 1.3em;
   }
-  @if $size == "small" {
+  @if $button-size == "small" {
     border-radius: 2px;
     font-size: 0.8em;
     padding: .4em 2em;
   }
-
 }
 
 .button {

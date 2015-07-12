@@ -1,0 +1,18 @@
+/**
+ * Rocket Components.
+ * http://hedleysmith.github.io/rocketcomponents/
+ *
+ * 'Animations' utility component.
+ * Some basic shared animation settings and utilities.
+ *
+ * Dependencies: none
+ *
+ */
+$animations-off: "false" !default;
+
+@mixin rocket-animation-default($duration:0.2s) {
+  @if $animations-off == "false" {
+    transition-duration: $duration;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
