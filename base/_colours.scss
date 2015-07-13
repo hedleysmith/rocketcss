@@ -9,30 +9,30 @@
  */
 
 // Brand
-$colour-primary: #3aaed8; // Light Blue
-$colour-primary-lighter: mix($colour-primary, #FFF, 80%);
-$colour-primary-darker: mix($colour-primary, #000, 90%);
+$colour-primary: #3aaed8 !default; // Light Blue
+$colour-primary-lighter: mix($colour-primary, #FFF, 80%) !default;
+$colour-primary-darker: mix($colour-primary, #000, 90%) !default;
 
-$colour-secondary: #a53f2b; // Dark Red
-$colour-secondary-lighter: mix($colour-secondary, #FFF, 80%);
-$colour-secondary-darker: mix($colour-secondary, #000, 90%);
+$colour-secondary: #a53f2b !default; // Dark Red
+$colour-secondary-lighter: mix($colour-secondary, #FFF, 80%) !default;
+$colour-secondary-darker: mix($colour-secondary, #000, 90%) !default;
 
-$colour-accent-1: #adacb5; // Grey
-$colour-accent-2: black;
+$colour-accent-1: #adacb5 !default; // Grey
+$colour-accent-2: black !default;
 
 // Utility
-$colour-info: #AAAAAA; // Grey
-$colour-warning: #FFDC00; // Yellow
-$colour-positive: #2ECC40; // Green
-$colour-negative: #FF4136; // Red
+$colour-info: #AAAAAA !default; // Grey
+$colour-warning: #FFDC00 !default; // Yellow
+$colour-positive: #2ECC40 !default; // Green
+$colour-negative: #FF4136 !default; // Red
 
 // Page
-$colour-page-background: #fcfcfc;
-$colour-page-background-tinted: #EEE;
-$colour-page-background-dark: #001021; // Dark Blue
-$colour-page-background-dark-text: #FFF; // Text over $page-background-dark
+$colour-page-background: #fcfcfc !default;
+$colour-page-background-tinted: #EEE !default;
+$colour-page-background-dark: #001021 !default; // Dark Blue
+$colour-page-background-dark-text: #FFF !default; // Text over $page-background-dark
 
 // Typography
-$text: #222;
-$text-darker: #111;
-$text-lighter: #666;
+$text: #222 !default;
+$text-darker: #111 !default;
+$text-lighter: #666 !default;
