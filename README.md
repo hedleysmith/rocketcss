@@ -1,7 +1,7 @@
 Rocket CSS
 ----------
 
-A decoupled library of CSS components written using Sass.
+[Rocket CSS](https://github.com/hedleysmith/rocketcss) is a decoupled library of CSS components written using Sass.
 
 Components are provided with some styling and configuration options but are designed to be used as a starting point in a custom design system.
 
