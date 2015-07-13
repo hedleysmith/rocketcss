@@ -11,9 +11,9 @@
  */
 
 // Configuration
-$container-normal: 1400px;
-$container-thin: 1050px;
-$container-thinner: 44em;
+$container-normal: 1400px !default;
+$container-thin: 1050px !default;
+$container-thinner: 44em !default;
 
 // At which breakpoint should we switch from small to large gutters?
 $gutter-breakpoint: $break-large;
