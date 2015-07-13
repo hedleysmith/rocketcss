@@ -1,5 +1,6 @@
 .DS_Store
 style.scss
+theme.scss
 components/icons
 spaces
 vendor/
