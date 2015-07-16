@@ -21,7 +21,26 @@ With numerous front end component libraries out there it makes sense to harness 
 
 ### Foundation
 
-@todo
+__Installation__
+
+1. Copy _functions.scss and _global.scss across.
+2. Copy over the .scss file for the component you're installing.
+3. Now attempt to compile the codebase, if there are any missing dependencies, figure out how to resolve them (this part can get a bit tricky).
+
+__Javascript Components__
+
+1. Foundation [requires Modernizr & jQuery > 2.1.0](http://foundation.zurb.com/docs/javascript.html) so include these as well as foundation.js - also, initialise foundation.
+
+```
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/js/foundation.js"></script>
+<script>
+  $(document).foundation();
+</script>
+```
+
+2. Copy the relevant .js file, e.g /js/foundation.tab.js
 
 ### Bootstrap
 
