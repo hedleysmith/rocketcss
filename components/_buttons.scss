@@ -7,6 +7,23 @@
  * Dependencies:
  * - rocket/base/colours
  *
+ * Example:
+ *   <a class="button button--primary">Click Me</a>
+ *
+ * Base:
+ *   .button
+ *
+ * Modifiers:
+ *   Styles:
+ *   .button--primary
+ *   .button--secondary
+ *   .button--positive
+ *   .button--negative
+ *
+ *   Sizes:
+ *   .button--small
+ *   .button--large
+ *   .button--xl
  */
 
 /**
@@ -16,12 +33,39 @@
 $button-border-radius: 3px !default;
 $button-text-color: rgba(0, 0, 0, 0.8) !default;
 
+/** Button base **/
+@mixin button($button-style: plain, $button-size: normal, $background-color: #E6E6E6, $text-color: rgba(0, 0, 0, 0.8)) {
+  transition: all 0.25s ease;
+  border-radius: $button-border-radius;
+  background-color: $background-color;
+  color: $button-text-color;
+  border: 0 none transparent;
+  padding: .75em 2em;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 60%, rgba(0, 0, 0, 0.1));
+    cursor: pointer;
+  }
+  &.disabled,
+  &:disabled {
+    background-image: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+    background-color: #CCC;
+  }
+  &.active, &:active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+  }
+}
+
 /**
  * The button mixin.
  * Examples:
  * - @include button(primary, small);
  */
-
 @mixin button($button-style: plain, $button-size: normal, $background-color: #E6E6E6, $text-color: rgba(0, 0, 0, 0.8)) {
   transition: all 0.25s ease;
   border-radius: $button-border-radius;
