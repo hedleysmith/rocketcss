@@ -133,11 +133,13 @@ $english-by-number: (
   // Define english and delimiter '-' for first part of class
   $up-first-part: "#{map-get($english-by-number, $n)}-";
 
-  // Here's the class
-  // @todo - Add optional 'pinning' class to avoid * selector.
-  #{$breakpoint-prefix}#{$up-first-part}up #{$breakpoint-prefix}#{$up-first-part}up__grid-item { width: (100 / $n)*1%; }
+  // Here's the classes
 
-  #{$breakpoint-prefix}#{$up-first-part}up #{$breakpoint-prefix}#{$up-first-part}up > .grid-item { width: (100 / $n)*1%; }
+  // Simple syntax
+  #{$breakpoint-prefix}#{$up-first-part}up > .grid-item { width: (100 / $n)*1%; }
+
+  // Advanced syntax
+  #{$breakpoint-prefix}#{$up-first-part}up #{$breakpoint-prefix}#{$up-first-part}up__grid-item { width: (100 / $n)*1%; }
 }
 
 // Loop through all breakpoints in $ups__number-of-ups-at-breakpoint
