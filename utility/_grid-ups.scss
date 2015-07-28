@@ -18,34 +18,52 @@
   in your project.
 
   Example: Ups and grids
-  <div class="l-container two-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
+  <div class="two-up">
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+  </div>
   <div class="l-container three-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+  </div>
 
   Ups work like widths in that they have responsive behavior.  If
   you prepend an up class with a responsive prefix, like (s for small
   or m for medium) the behaviour will only kick in at those
   viewports.
 
-  For example, if you want your gallery to be two-up at the smallest
-  viewport, four-up at medium, six-up at large, and eight-up on the largest then use
-  this.
+  Example: Responsive Ups: simple syntax
+  <div class="l-container two-up medium-four-up large-six-up xl-eight-up">
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+    <div class="grid-item"><img src="http://fillmurray.com/500/300"></div>
+  </div>
 
-  Example: Responsive Ups
-  <div class="l-container two-up m-four-up l-six-up xl-eight-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+  Example: Responsive Ups: advanced syntax
+  <div class="large-four-up">
+
+    <div class="large-four-up__grid-item grid-item">
+      <img src="http://fillmurray.com/500/300">
+    </div>
+
+    <div class="medium-three-up">
+      <div class="large-four-up__grid-item medium-three-up__grid-item grid-item">
+        <img src="http://fillmurray.com/500/300">
+      </div>
+      <div class="large-four-up__grid-item medium-three-up__grid-item grid-item">
+        <img src="http://fillmurray.com/500/300">
+      </div>
+      <div class="large-four-up__grid-item medium-three-up__grid-item grid-item">
+        <img src="http://fillmurray.com/500/300">
+      </div>
+    </div>
+
   </div>
 -----------------------------------------------------  */
 
@@ -117,7 +135,9 @@ $english-by-number: (
 
   // Here's the class
   // @todo - Add optional 'pinning' class to avoid * selector.
-  #{$breakpoint-prefix}#{$up-first-part}up > * { width: (100 / $n)*1%; }
+  #{$breakpoint-prefix}#{$up-first-part}up #{$breakpoint-prefix}#{$up-first-part}up__grid-item { width: (100 / $n)*1%; }
+
+  #{$breakpoint-prefix}#{$up-first-part}up #{$breakpoint-prefix}#{$up-first-part}up > .grid-item { width: (100 / $n)*1%; }
 }
 
 // Loop through all breakpoints in $ups__number-of-ups-at-breakpoint
