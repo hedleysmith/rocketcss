@@ -1,6 +1,14 @@
+# OS X files
 .DS_Store
-style.scss
-_theme.scss
-components/icons
-spaces
+
+# Custom folders
+spaces/
 vendor/
+dist/
+
+# Custom files
+_theme.scss
+style.scss
+
+# Incomplete components (while in development)
+components/icons
