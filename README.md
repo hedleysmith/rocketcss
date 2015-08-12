@@ -84,3 +84,8 @@ __Javascript Components__
 * [ExpandJS](http://expandjs.com/)
 * [Ionic](http://ionicframework.com/docs/components)
 * [UI Kit](https://github.com/uikit/uikit)
+
+
+### Development
+
+1. To test compilation, run ```sass _rocket.scss dist/rocket.css```

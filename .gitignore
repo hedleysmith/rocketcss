@@ -12,3 +12,6 @@ style.scss
 
 # Incomplete components (while in development)
 components/icons
+
+# Development folders & files
+.sass-cache
