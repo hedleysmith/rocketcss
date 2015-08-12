@@ -26,3 +26,11 @@
     position: relative;
   }
 }
+
+// Horizontal list with padding.
+@mixin list-horizontal-padded() {
+  @include list-horizontal;
+  > li {
+    padding: 0 .25em;
+  }
+}

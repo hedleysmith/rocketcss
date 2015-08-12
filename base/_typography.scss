@@ -23,51 +23,39 @@ $h6-font-size: 1 * $base-font-size !default;
 $base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $heading-font-family: "Source Sans Pro", sans-serif !default;
 
-body {
+html {
   font-family: $base-font-family;
-  line-height: 1.5;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
 }
 
 h1 {
+  font-size: $h1-font-size;
+  font-family: $heading-font-family;
   font-weight: 200;
 }
 
 h2 {
-
+  font-size: $h2-font-size;
+  font-weight: 200;
+  font-family: $heading-font-family;
 }
 
 h3 {
-
+  font-size: $h3-font-size;
+  font-weight: 200;
+  font-family: $heading-font-family;
 }
 
 h4 {
-
+  font-size: $h4-font-size;
+  font-weight: 200;
+  font-family: $heading-font-family;
 }
 
-@mixin rocket-blockquote {
-  border-left: 0.25em solid #E9E9E9;
-  color: #666666;
-  font-size: 1em;
-  line-height: 1.5;
-  padding: 0 1.5em 0 1em;
-  margin-left: 0
-}
-
-@mixin rocket-blockquote-2 {
-  background-color: black;
-  color: #FFFFFF;
-  float: right;
-  font-size: 1em;
-  line-height: 1.5;
-  margin: 0 -1em 0 1em;
-  padding: 0.5em;
-  width: 15em;
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-blockquote {
-  @include rocket-blockquote;
+h5 {
+  font-size: $h5-font-size;
+  font-weight: 200;
+  font-family: $heading-font-family;
 }
