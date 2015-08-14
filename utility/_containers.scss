@@ -2,8 +2,8 @@
  * Rocket Components.
  * http://hedleysmith.github.io/rocketcomponents/
  *
- * 'Grid' utility component.
- * A simple responsive grid and breakpoints.
+ * 'Containers' utility component.
+ * A set of containers, to wrap around other elements.
  *
  * Dependencies:
  * - rocket/utility/clearfix
@@ -41,4 +41,9 @@ $gutter-breakpoint: $break-large;
 .l-container-thinner {
   @include container-fixed;
   max-width: $container-thinner;
+}
+
+// Additionally provides vertical spacing
+.l-container--vertical {
+  margin: 1em 0;
 }
