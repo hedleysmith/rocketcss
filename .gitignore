@@ -6,9 +6,10 @@ spaces/
 vendor/
 dist/
 
-# Custom files
+# Custom files & folders
 _theme.scss
 style.scss
+styleguide/
 
 # Incomplete components (while in development)
 components/icons
