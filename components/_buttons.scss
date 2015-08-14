@@ -7,14 +7,15 @@
  * Dependencies:
  * - rocket/base/colours
  *
- * Example:
+ * Examples:
  *   <a class="button button--primary">Click Me</a>
+ *   <a class="button button--secondary button--xl">Click Me</a>
  *
  * Base:
  *   .button
  *
  * Modifiers:
- *   Styles:
+ *   Colours:
  *   .button--primary
  *   .button--secondary
  *   .button--positive
@@ -28,26 +29,33 @@
 
 /**
  * Configuration options.
- * For minor overrides, see _theme.scss.
+ * For minor overrides see _theme.scss.
  */
-$button-border-radius: 3px !default;
-$button-text-color: rgba(0, 0, 0, 0.8) !default;
+$button-default-border-radius: 3px !default;
+$button-default-transition: all 0.25s ease !default;
+$button-default-text-color: #FFF !default;
+$button-default-background-color: #AAA;
 
-/** Button base **/
-@mixin button($button-style: plain, $button-size: normal, $background-color: #E6E6E6, $text-color: rgba(0, 0, 0, 0.8)) {
-  transition: all 0.25s ease;
-  border-radius: $button-border-radius;
-  background-color: $background-color;
-  color: $button-text-color;
-  border: 0 none transparent;
+// Button base mixin
+@mixin button-base {
+  border: none;
   padding: .75em 2em;
   text-decoration: none;
   display: inline-block;
+}
+
+// Default style
+@mixin button-style-default {
+  transition: $button-default-transition;
+  border-radius: $button-default-border-radius;
+  color: $button-default-text-color;
+  background-color: $button-default-background-color;
 
   &:hover,
   &:focus {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 60%, rgba(0, 0, 0, 0.1));
     cursor: pointer;
+    text-decoration: none;
   }
   &.disabled,
   &:disabled {
@@ -56,95 +64,51 @@ $button-text-color: rgba(0, 0, 0, 0.8) !default;
     opacity: 0.7;
     background-color: #CCC;
   }
-  &.active, &:active {
+  &.active,
+  &:active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+  }
+  &:visited {
+    color: $button-default-text-color;
   }
 }
 
-/**
- * The button mixin.
- * Examples:
- * - @include button(primary, small);
- */
-@mixin button($button-style: plain, $button-size: normal, $background-color: #E6E6E6, $text-color: rgba(0, 0, 0, 0.8)) {
-  transition: all 0.25s ease;
-  border-radius: $button-border-radius;
-  background-color: $background-color;
-  color: $button-text-color;
-  border: 0 none transparent;
-  padding: .75em 2em;
-  text-decoration: none;
-  display: inline-block;
-
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 60%, rgba(0, 0, 0, 0.1));
-    cursor: pointer;
-  }
-  &.disabled,
-  &:disabled {
-    background-image: none;
-    cursor: not-allowed;
-    opacity: 0.7;
-    background-color: #CCC;
-  }
-  &.active, &:active {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-  }
-
-  @if $button-style == "primary" {
-    background-color: $colour-primary;
-    color: #FFF;
-    &:visited {
-      color: #FFF;
-    }
-  }
-  @if $button-style == "secondary" {
-    background-color: $colour-secondary;
-    color: #FFF;
-    &:visited {
-      color: #FFF;
-    }
-  }
-  @if $button-style == "positive" {
-    background-color: $colour-positive;
-    color: #FFF;
-  }
-  @if $button-style == "negative" {
-    background-color: $colour-negative;
-  }
-  @if $button-size == "large" {
-    font-size: 1.3em;
-  }
-  @if $button-size == "small" {
-    border-radius: 2px;
-    font-size: 0.8em;
-    padding: .4em 2em;
-  }
-}
-
+// Base class
 .button {
-  @include button();
+  @include button-base;
+  @include button-style-default;
 }
 
+
+// Colour modifiers
 .button--primary {
-  @include button(primary);
+  background-color: $colour-primary;
 }
 
-.button--small {
-
-}
-
-.button--large {
- // @include button-base();
- // font-size: 1.5em;
+.button--secondary {
+  background-color: $colour-secondary;
 }
 
 .button--positive {
-
+  background-color: $colour-positive;
 }
 
 .button--negative {
-
+  background-color: $colour-negative;
 }
 
+
+// Size modifiers
+.button--small {
+  border-radius: 2px;
+  font-size: 0.8em;
+  padding: .4em 2em;
+}
+
+.button--large {
+  font-size: 1.3em;
+}
+
+.button--xl {
+  font-size: 1.8em;
+}
