@@ -8,6 +8,7 @@ dist/
 
 # Custom files & folders
 _theme.scss
+_overrides.scss
 style.scss
 styleguide/
 
